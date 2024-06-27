@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import { Home } from "./pages/Home";
 import Basket from "./Basket";
 import "./App.css";
 
@@ -13,11 +16,20 @@ function App() {
 
   return (
     <>
-      <h3>Cart</h3>
-      <button onClick={() => setShowBasket(!showBasket)}>
-        {showBasket ? "Hide" : "Show"} Basket
-      </button>
-      <div className="basket-container">{showBasket && <Basket />}</div>
+      <BrowserRouter>
+        <h3>Cart</h3>
+        <button onClick={() => setShowBasket(!showBasket)}>
+          {showBasket ? "Hide" : "Show"} Basket
+        </button>
+        {showBasket && (
+          <div className="basket-container">
+            <Basket cart={cart} />
+          </div>
+        )}
+        <Routes>
+          <Route path="/" element={<Home addToCart={addToCart} />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
