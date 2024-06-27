@@ -13,7 +13,7 @@ export default function Basket({ cart }) {
         ))} */}
       </div>
       {cart.map((item, index) => (
-        <div key={index}>
+        <div className="basket-item" key={index}>
           <p>{item.id}</p>
         </div>
       ))}

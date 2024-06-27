@@ -72,3 +72,16 @@
   padding: 0;
   border-bottom: 2px solid #e3e3e3;
 }
+
+.basket-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.basket-item p {
+  margin: 0;
+  padding: 0;
+}
