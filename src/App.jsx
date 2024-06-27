@@ -5,13 +5,19 @@ import "./App.css";
 
 function App() {
   const [showBasket, setShowBasket] = useState(false);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (item) => {
+    setCart([...cart, item]);
+  };
+
   return (
     <>
       <h3>Cart</h3>
       <button onClick={() => setShowBasket(!showBasket)}>
         {showBasket ? "Hide" : "Show"} Basket
       </button>
-      {showBasket && <Basket />}
+      <div className="basket-container">{showBasket && <Basket />}</div>
     </>
   );
 }
