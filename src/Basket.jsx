@@ -4,19 +4,15 @@ export default function Basket({ cart }) {
     <div className="basket-wrapper">
       <div className="basket-header">
         <h3>Basket</h3>
-        {/* {cart.map((item, index) => (
-          <div key={index}>
-            <img src={item.image} alt={item.name} />
-            <p>{item.name}</p>
+        {cart.map((item, index) => (
+          <div key={index} className="basket-item">
+            <img src={item.url} alt={item.url} width={100} height={80} />
+            <p>{item.id}</p>
             <p>{item.price}</p>
+            <p>Quantity: {item.quantity}</p>
           </div>
-        ))} */}
+        ))}
       </div>
-      {cart.map((item, index) => (
-        <div className="basket-item" key={index}>
-          <p>{item.id}</p>
-        </div>
-      ))}
     </div>
   );
 }
