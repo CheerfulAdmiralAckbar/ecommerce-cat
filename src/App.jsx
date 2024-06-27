@@ -1,9 +1,12 @@
 import { useState } from "react";
+import shoppingCart from "./shoppingCart";
 
 import Basket from "./Basket";
 import "./App.css";
+import React from "react";
 
 function App() {
+
   const [showBasket, setShowBasket] = useState(false);
   return (
     <>
@@ -13,7 +16,10 @@ function App() {
       </button>
       {showBasket && <Basket />}
     </>
-  );
-}
+      );
+  }
+
+ 
+
 
 export default App;
