@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -43,45 +49,73 @@
 
 .basket-container {
   display: flex;
-  background: white;
-  color: black;
-  border-radius: 5px;
-  width: 300px;
-  padding: 5px;
+  flex-direction: column;
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  width: 400px;
+  margin: 20px auto;
 }
 
 .basket-header {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
   border-bottom: 2px solid #e3e3e3;
+}
+
+.basket-header h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #444;
+  text-align: center;
 }
 
 .basket-wrapper {
   width: 100%;
-  padding: 5px;
-  text-align: left;
-  box-sizing: border-box;
-}
-
-.basket-wrapper h3 {
-  margin: 0;
-  padding: 0;
-  font-size: 23px;
-}
-
-.basket-wrapper hr {
-  margin: 0;
-  padding: 0;
-  border-bottom: 2px solid #e3e3e3;
+  padding: 15px;
 }
 
 .basket-item {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e3e3e3;
 }
 
-.basket-item p {
-  margin: 0;
-  padding: 0;
+.basket-item:last-child {
+  border-bottom: none;
+}
+
+.basket-item-image {
+  width: 100px;
+  height: 80px;
+  border-radius: 5px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.basket-item-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.basket-item-id {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.basket-item-price {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.basket-item-quantity {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
 }
