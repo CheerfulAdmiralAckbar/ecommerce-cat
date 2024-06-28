@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +45,94 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.basket-container {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  width: 400px;
+  margin: 20px auto;
+}
+
+.basket-header {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #e3e3e3;
+}
+
+.basket-header h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #444;
+  text-align: center;
+}
+
+.basket-wrapper {
+  width: 100%;
+  padding: 20px;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.basket-item:last-child {
+  border-bottom: none;
+}
+
+.basket-item-image {
+  width: 100px;
+  height: 80px;
+  border-radius: 5px;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 2px solid #ddd; /* Lighter grey border */
+  background-color: lightgray; /* For debugging */
+}
+
+.basket-item-details {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: flex-start;
+}
+
+.basket-item-id {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.basket-item-price {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.basket-item-quantity {
+  font-size: 14px;
+  color: #555;
+}
+
+.basket-item-button {
+  margin-left: auto;
+  background: #e13030;
+  width: 33px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
