@@ -40,6 +40,11 @@ function App() {
     });
   };
 
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
   return (
     <>
       <BrowserRouter>
@@ -50,6 +55,7 @@ function App() {
         {showBasket && (
           <div className="basket-container">
             <Basket cart={cart} removeFromCart={removeFromCart} />
+            <p>Total Price: ${totalPrice.toFixed(2)}</p>
           </div>
         )}
         <Routes>
