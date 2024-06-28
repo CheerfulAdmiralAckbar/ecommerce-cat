@@ -13,8 +13,13 @@ export const Home = ({ addToCart }) => {
         throw new Error("there has been an error");
       }
       const data = await response.json();
+      const dataWithPrices = data.map((item) => ({
+        ...item,
+        // random price between 5 and 20
+        price: (Math.random() * 20 + 5).toFixed(2),
+      }));
       console.log(response);
-      setCatImages(data);
+      setCatImages(dataWithPrices);
     } catch {
       console.log(error);
       setErrorMsg(error.message);
@@ -34,6 +39,7 @@ export const Home = ({ addToCart }) => {
             return (
               <div key={index} onClick={() => addToCart(image)}>
                 <img src={image.url} alt={image.id}></img>
+                <p>Price: ${image.price}</p>
               </div>
             );
           })}
