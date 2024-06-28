@@ -37,8 +37,16 @@ export const Home = ({ addToCart }) => {
         <>
           {catImages.map((image, index) => {
             return (
-              <div key={index} onClick={() => addToCart(image)}>
-                <img src={image.url} alt={image.id}></img>
+              <div
+                id="catImageDiv"
+                key={index}
+                onClick={() => addToCart(image)}
+              >
+                <img
+                  className="catImageImg"
+                  src={image.url}
+                  alt={image.id}
+                ></img>
                 <p>Price: ${image.price}</p>
               </div>
             );

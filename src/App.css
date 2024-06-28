@@ -136,3 +136,14 @@
   align-content: center;
   align-items: center;
 }
+
+#catImageDiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.catImageImg {
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
