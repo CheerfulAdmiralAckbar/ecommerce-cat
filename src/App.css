@@ -72,7 +72,7 @@
 
 .basket-wrapper {
   width: 100%;
-  padding: 15px;
+  padding: 20px;
 }
 
 .basket-item {
@@ -92,13 +92,14 @@
   border-radius: 5px;
   margin-right: 15px;
   object-fit: cover;
+  border: 2px solid #ddd; /* Lighter grey border */
+  background-color: lightgray; /* For debugging */
 }
 
 .basket-item-details {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  justify-content: start;
+  flex-grow: 1;
   align-items: flex-start;
 }
 
@@ -117,5 +118,21 @@
 .basket-item-quantity {
   font-size: 14px;
   color: #555;
-  margin-top: 5px;
+}
+
+.basket-item-button {
+  margin-left: auto;
+  background: #e13030;
+  width: 33px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }

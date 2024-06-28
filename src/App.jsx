@@ -23,6 +23,23 @@ function App() {
     });
   };
 
+  const removeFromCart = (itemId) => {
+    setCart((prevCart) => {
+      // Map through the cart and decrement the quantity of the item with the same index as the item
+      const updatedCart = prevCart
+        .map((item) => {
+          if (item.id === itemId) {
+            // Decrement the quantity if item exists
+            return { ...item, quantity: item.quantity - 1 };
+          }
+          return item;
+        })
+        // Filter out items with a quantity of zero
+        .filter((item) => item.quantity > 0);
+      return updatedCart;
+    });
+  };
+
   return (
     <>
       <BrowserRouter>
@@ -32,7 +49,7 @@ function App() {
         </button>
         {showBasket && (
           <div className="basket-container">
-            <Basket cart={cart} />
+            <Basket cart={cart} removeFromCart={removeFromCart} />
           </div>
         )}
         <Routes>

@@ -1,4 +1,4 @@
-export default function Basket({ cart }) {
+export default function Basket({ cart, removeFromCart }) {
   console.log(cart);
   return (
     <div className="basket-container">
@@ -14,6 +14,12 @@ export default function Basket({ cart }) {
               <p className="basket-item-price">${item.price}</p>
               <p className="basket-item-quantity">Quantity: {item.quantity}</p>
             </div>
+            <button
+              className="basket-item-button"
+              onClick={() => removeFromCart(item.id)}
+            >
+              X
+            </button>
           </div>
         ))}
       </div>
